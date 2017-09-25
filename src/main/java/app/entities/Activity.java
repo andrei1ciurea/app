@@ -14,6 +14,8 @@ public class Activity {
 
     private String name;
 
+    private Boolean cloneable;
+
     private String details;
 
     public Integer getId() {
@@ -38,5 +40,14 @@ public class Activity {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+
+    public Boolean getCloneable() {
+        return cloneable;
+    }
+
+    public void setCloneable(Boolean cloneable) {
+        this.cloneable = cloneable;
     }
 }

@@ -24,6 +24,7 @@ public class ActivityController {
         Activity activity = new Activity();
         activity.setName(name);
         activity.setDetails(details);
+        activity.setCloneable(Boolean.TRUE);
 
         activityRepository.save(activity);
 
