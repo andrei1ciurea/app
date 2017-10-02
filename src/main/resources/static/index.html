@@ -3,17 +3,36 @@
 <head>
     <title>app</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script src="app.js"></script>
 </head>
 
-<body>
-<div ng-controller="appController">
-    <li>
-        <ul ng-repeat = "activity in activities">{{activity.name}}</ul>
-    </li>
+<body class="container-fluid">
+<div class="row">
+    <h2 class="text-center">App</h2>
+</div>
+<div ng-controller="actController" class="row">
+        <div ng-repeat = "activity in activities" class="col-sm-4">
+            <div>Activity:</div>
+            <div>{{activity.name}}</div>
+            <div>{{activity.details}}</div>
+            <img src="https://www.w3schools.com/images/w3schools_green.jpg">
+        </div>
 </div>
 
-<div>
+<div ng-controller="btnController" class="row">
+    <input type="text" ng-model = "name">
+    <input type="text" ng-model="details">
+    <button ng-click="Clicka()">Add Activity</button>
 </div>
+
 </body>
 </html>
