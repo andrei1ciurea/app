@@ -1,7 +1,8 @@
 angular.module('demo', [])
-    .controller('Hello', function($scope, $http) {
-        $http.get('http://rest-service.guides.spring.io/greeting').
+    .controller('appController', function($scope, $http) {
+        $http.get('http://localhost:8080/activity/all').
         then(function(response) {
-            $scope.greeting = response.data;
+            $scope.activities = response.data;
+            console.log($scope.activities)
         });
     });
