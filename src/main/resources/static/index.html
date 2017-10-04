@@ -16,23 +16,36 @@
 </head>
 
 <body>
+<div class="page-header">
+    <blockquote class="pull-right">
+        <p>The world is.</p>
+        <small>by <cite>Adult Ego</cite></small>
+    </blockquote>
+</div>
 <div class="container-fluid">
     <div class="row">
-        <h2 class="text-center">App</h2>
+        <h2 class="text-center">Activities</h2>
     </div>
     <div ng-controller="actController" class="row">
-        <div ng-repeat="activity in activities" class="col-md-4">
-            <div>Activity:</div>
-            <div>{{activity.name}}</div>
-            <div>{{activity.details}}</div>
-            <img src="https://www.w3schools.com/images/w3schools_green.jpg">
+        <div ng-repeat="activity in activities | orderBy: '-priority'" class="col-md-4">
+            <h3>{{activity.name}}
+                <small><br>{{activity.details}}</small>
+            </h3>
+            <span ng-click="raisePriority(activity)">priority: {{activity.priority}}</span>
+            <img class="center-block" src="https://www.w3schools.com/images/w3schools_green.jpg">
         </div>
     </div>
 
     <div ng-controller="btnController" class="row">
-        <input type="text" ng-model="name">
-        <input type="text" ng-model="details">
-        <button ng-click="Clicka()">Add Activity</button>
+        <div class="col-md-4">
+            <form ng-submit="Clicka()">
+                <input type="text" ng-model="name"/>
+                <input type="text" ng-model="details"/>
+                <button type="submit">Add Activity</button>
+            </form>
+
+
+        </div>
     </div>
 </div>
 <!--container

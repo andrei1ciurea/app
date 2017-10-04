@@ -16,6 +16,8 @@ public class ActivityController {
     @Autowired
     private ActivityRepository activityRepository;
 
+    public static Integer DEFAULT_PRIORITY = 0;
+
     @GetMapping(path = "/add")
     public
     @ResponseBody
@@ -24,6 +26,7 @@ public class ActivityController {
         Activity activity = new Activity();
         activity.setName(name);
         activity.setDetails(details);
+        activity.setPriority(DEFAULT_PRIORITY);
 
         activityRepository.save(activity);
 

@@ -16,6 +16,8 @@ public class Activity {
 
     private String details;
 
+    private Integer priority;
+
     public Integer getId() {
         return id;
     }
@@ -40,4 +42,11 @@ public class Activity {
         this.details = details;
     }
 
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
 }
