@@ -32,7 +32,10 @@
                 <small><br>{{activity.details}}</small>
             </h3>
             <span ng-click="raisePriority(activity)">priority: {{activity.priority}}</span>
-            <img class="center-block" src="https://www.w3schools.com/images/w3schools_green.jpg">
+            <input type='file' ng-model-instant
+                   onchange="angular.element(this).scope().imageUpload(event)"
+                   multiple />
+            <img class="thumb" ng-src="{{activity.image}}" />
         </div>
     </div>
 

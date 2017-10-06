@@ -9,6 +9,18 @@ angular.module('demo', [])
     })
     .controller('btnController', function ($scope, $http) {
 
+        $scope.imageUpload = function(event){
+            var files = event.target.files; //FileList object
+
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var reader = new FileReader();
+                reader.onload = $scope.imageIsLoaded;
+                reader.readAsDataURL(file);
+            }
+        };
+
+
         $scope.Clicka = function () {
             if ($scope.name === '') {
                 return;
@@ -17,6 +29,11 @@ angular.module('demo', [])
                 $scope.activities = response.data;
                 $scope.name = '';
                 $scope.details = '';
+                $scope.imageIsLoaded = function(e){
+                    $scope.$apply(function() {
+                        $scope.activity.image.push(e.target.result);
+                    });
+                }
             });
         };
 
